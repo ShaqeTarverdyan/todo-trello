@@ -76,13 +76,12 @@ const listReucer = (state = initialState, { type, payload }) => {
     }
 
     case CONSTANTS.EDIT_CARD_TITLE : {
-
       newState.map(list => 
         {
           if(list.id === payload.listID) {
             list.cards.map(card => {
               if(card.id === payload.id) {
-                return card.text = payload.title
+                return card.title = payload.title
               }
               return card
             })
@@ -91,7 +90,7 @@ const listReucer = (state = initialState, { type, payload }) => {
         }
       )
       return newState;
-    }
+     }
 
     case CONSTANTS.ADD_COMMENT : {
 
